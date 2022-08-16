@@ -1,10 +1,12 @@
 document.getElementById('btn-deposit').addEventListener('click', function(){
     let dipositAmount = document.getElementById('deposit-field')
-    if(dipositAmount.value === ''){
-       return alert('Please enter ammount you want to diposit')
-    }
+    
     const depositTotal = document.getElementById('deposit-total')
     const dipositValue = parseFloat(dipositAmount.value)
+    if(isNaN(dipositValue)){
+        dipositAmount.value = ''
+        return alert('Please enter ammount you want to diposit')
+     }
     let previousTotal = parseFloat(depositTotal.innerText)
     depositTotal.innerText = previousTotal + dipositValue
     // UPDATE BALANCE

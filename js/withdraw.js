@@ -1,11 +1,10 @@
 document.getElementById('btn-withdraw').addEventListener('click', function(){
     const newAmmountString = document.getElementById('withdraw-field')
-    if(newAmmountString.value === ''){
-
-        
+    const newAmmount = parseFloat(newAmmountString.value)
+    if(isNaN(newAmmount) ){
+        newAmmountString.value = ''
         return alert('Please enter ammount you want to withdraw')
     }
-    const newAmmount = parseFloat(newAmmountString.value)
     const withdrawTotalString = document.getElementById('withdraw-total')
     const withdrawTotal = parseFloat(withdrawTotalString.innerText)
     
